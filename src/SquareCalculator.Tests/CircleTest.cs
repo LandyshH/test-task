@@ -7,7 +7,7 @@ public class CircleTest
     public void CalculateSquare_ShouldThrowArgumentException_WhenRadiusIsNegative(double radius)
     {
         Assert.Throws<ArgumentException>(() =>
-            new Circle(radius).CalculateSquare());
+            new Circle(radius).Square);
     }
 
     [Theory]
@@ -16,7 +16,7 @@ public class CircleTest
     public void CalculateSquare_ShouldReturnCorrectResult(double radius, double expected)
     {
         var circle = new Circle(radius);
-        var square = circle.CalculateSquare();
+        var square = circle.Square;
         Assert.Equal(expected, square, 6);
     }
 }

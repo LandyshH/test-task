@@ -5,7 +5,9 @@ namespace SquareCalculator.Figures;
 public class Circle : IFigure
 {
     public double Radius { get; }
-    
+
+    public double Square => Math.PI * Radius * Radius;
+
     public Circle(double radius)
     {
         if (radius < 0)
@@ -14,10 +16,5 @@ public class Circle : IFigure
         }
         
         Radius = radius;
-    }
-
-    public double CalculateSquare()
-    {
-        return Math.PI * Radius * Radius;
     }
 }

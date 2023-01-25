@@ -2,5 +2,5 @@
 
 public interface IFigure
 {
-    public double CalculateSquare();
+    double Square { get; }
 }

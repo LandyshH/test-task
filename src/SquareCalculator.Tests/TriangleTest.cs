@@ -20,7 +20,7 @@ public class TriangleTest
         double secondSide, double thirdSide, double expected)
     {
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        var square = triangle.CalculateSquare();
+        var square = triangle.Square;
         Assert.Equal(expected, square, 6);
     }
     

@@ -7,30 +7,32 @@ public class Triangle : IFigure
     public double FirstSide { get; }
     public double SecondSide { get; }
     public double ThirdSide { get; }
-    
+
+    public double Square
+    {
+        get
+        {
+            var p = (FirstSide + SecondSide + ThirdSide) * 0.5;
+            return Math.Sqrt(p * (p - FirstSide) * (p - SecondSide) * (p - ThirdSide));
+        }
+    }
 
     private double[] _sortedSides;
 
     public Triangle(double firstSide, double secondSide, double thirdSide)
     {
-        _sortedSides = new[] {firstSide, secondSide, thirdSide}
-            .OrderByDescending(s => s)
-            .ToArray();
-
         if (!IsTriangle(firstSide, secondSide, thirdSide))
         {
             throw new ArgumentException("Triangles sides must be non negative and satisfy the triangle inequality.");
         }
+        
+        _sortedSides = new[] {firstSide, secondSide, thirdSide}
+            .OrderByDescending(s => s)
+            .ToArray();
 
         FirstSide = firstSide;
         SecondSide = secondSide;
         ThirdSide = thirdSide;
-    }
-
-    public double CalculateSquare()
-    {
-        var p = (FirstSide + SecondSide + ThirdSide) * 0.5;
-        return Math.Sqrt(p * (p - FirstSide) * (p - SecondSide) * (p - ThirdSide));
     }
     
     public bool IsRightTriangle()
