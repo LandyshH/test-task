@@ -1,4 +1,6 @@
-namespace SquareCalculatorTests;
+using AreaCalculator.Figures;
+
+namespace AreaCalculator.Tests;
 
 public class TriangleTest
 {
@@ -6,7 +8,7 @@ public class TriangleTest
     [InlineData(0, 0, 0)]
     [InlineData(4, 2, 2)]
     [InlineData(-4, 2, 8)]
-    public void CalculateSquare_ShouldThrowArgumentException_WhenTriangleNotExists(double firstSide, 
+    public void ShouldThrowArgumentException_WhenTriangleNotExists(double firstSide, 
         double secondSide, double thirdSide)
     {
         Assert.Throws<ArgumentException>(() =>
@@ -16,12 +18,11 @@ public class TriangleTest
     [Theory]
     [InlineData(1, 1, 1, 0.4330127)]
     [InlineData(5, 2, 6, 4.6837484)]
-    public void CalculateSquare_ShouldReturnCorrectResult(double firstSide, 
+    public void Area_ShouldReturnCorrectResult(double firstSide, 
         double secondSide, double thirdSide, double expected)
     {
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        var square = triangle.Square;
-        Assert.Equal(expected, square, 6);
+        FigureAsserter.AssertArea(triangle, expected);
     }
     
     [Theory]

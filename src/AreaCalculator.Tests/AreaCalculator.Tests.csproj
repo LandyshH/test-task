@@ -7,7 +7,6 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>SquareCalculatorTests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SquareCalculator\SquareCalculator.csproj" />
+      <ProjectReference Include="..\AreaCalculator\AreaCalculator.csproj" />
     </ItemGroup>
 
 </Project>

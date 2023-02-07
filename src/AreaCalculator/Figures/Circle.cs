@@ -1,12 +1,12 @@
-﻿using SquareCalculator.Interfaces;
+﻿using AreaCalculator.Interfaces;
 
-namespace SquareCalculator.Figures;
+namespace AreaCalculator.Figures;
 
 public class Circle : IFigure
 {
     public double Radius { get; }
 
-    public double Square => Math.PI * Radius * Radius;
+    public double Area => Math.PI * Radius * Radius;
 
     public Circle(double radius)
     {

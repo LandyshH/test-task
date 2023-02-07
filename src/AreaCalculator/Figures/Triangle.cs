@@ -1,6 +1,6 @@
-﻿using SquareCalculator.Interfaces;
+﻿using AreaCalculator.Interfaces;
 
-namespace SquareCalculator.Figures;
+namespace AreaCalculator.Figures;
 
 public class Triangle : IFigure
 {
@@ -8,7 +8,7 @@ public class Triangle : IFigure
     public double SecondSide { get; }
     public double ThirdSide { get; }
 
-    public double Square
+    public double Area
     {
         get
         {
@@ -17,7 +17,7 @@ public class Triangle : IFigure
         }
     }
 
-    private double[] _sortedSides;
+    private readonly double[] _sortedSides;
 
     public Triangle(double firstSide, double secondSide, double thirdSide)
     {

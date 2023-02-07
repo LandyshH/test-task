@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareCalculator", "SquareCalculator\SquareCalculator.csproj", "{909EA6C4-A071-4B54-B4D6-74E71BFD89B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaCalculator", "AreaCalculator\AreaCalculator.csproj", "{909EA6C4-A071-4B54-B4D6-74E71BFD89B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareCalculator.Tests", "SquareCalculator.Tests\SquareCalculator.Tests.csproj", "{DF3539D4-0A32-4549-A002-140FCD41291D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaCalculator.Tests", "AreaCalculator.Tests\AreaCalculator.Tests.csproj", "{DF3539D4-0A32-4549-A002-140FCD41291D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
