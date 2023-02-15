@@ -4,20 +4,30 @@ namespace AreaCalculator.Tests;
 
 public class CircleTest
 {
-    [Theory]
-    [InlineData(-2)]
-    public void ShouldThrowArgumentException_WhenRadiusIsNegative(double radius)
+    [Fact]
+    public void ShouldThrowArgumentException_WhenRadiusIsNegative()
     {
-        Assert.Throws<ArgumentException>(() =>
-            new Circle(radius));
+        // Arrange
+        const int radius = -2;
+        
+        // Act
+        var act = () => new Circle(radius);
+        
+        // Assert
+        Assert.Throws<ArgumentException>(act);
     }
 
     [Theory]
-    [InlineData(4, Math.PI * 16)]
+    [InlineData(4, 50.26548245)]
     [InlineData(0, 0)]
     public void Area_ShouldReturnCorrectResult(double radius, double expected)
     {
+        // Arrange
+        
+        // Act
         var circle = new Circle(radius);
+
+        // Assert 
         FigureAsserter.AssertArea(circle, expected);
     }
 }

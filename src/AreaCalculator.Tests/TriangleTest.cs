@@ -11,8 +11,13 @@ public class TriangleTest
     public void ShouldThrowArgumentException_WhenTriangleNotExists(double firstSide, 
         double secondSide, double thirdSide)
     {
-        Assert.Throws<ArgumentException>(() =>
-            new Triangle(firstSide, secondSide, thirdSide));
+        // Arrange
+        
+        // Act
+        var act = () => new Triangle(firstSide, secondSide, thirdSide);
+        
+        // Assert 
+        Assert.Throws<ArgumentException>(act);
     }
 
     [Theory]
@@ -21,7 +26,12 @@ public class TriangleTest
     public void Area_ShouldReturnCorrectResult(double firstSide, 
         double secondSide, double thirdSide, double expected)
     {
+        // Arrange
+        
+        // Act
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
+        
+        // Assert
         FigureAsserter.AssertArea(triangle, expected);
     }
     
@@ -31,8 +41,13 @@ public class TriangleTest
     public void IsRightTriangle_ShouldReturnCorrectResult(double firstSide, 
         double secondSide, double thirdSide, bool expected)
     {
+        // Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        var actual = triangle.IsRightTriangle();
+
+        // Act
+        var actual = triangle.IsRectangular();
+        
+        // Assert
         Assert.Equal(expected, actual);
     }
 }

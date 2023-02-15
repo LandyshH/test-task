@@ -1,14 +1,12 @@
-﻿using AreaCalculator.Interfaces;
+﻿namespace AreaCalculator.Figures;
 
-namespace AreaCalculator.Figures;
-
-public class Triangle : IFigure
+public class Triangle : Figure
 {
     public double FirstSide { get; }
     public double SecondSide { get; }
     public double ThirdSide { get; }
 
-    public double Area
+    public override double Area
     {
         get
         {
@@ -21,7 +19,7 @@ public class Triangle : IFigure
 
     public Triangle(double firstSide, double secondSide, double thirdSide)
     {
-        if (!IsTriangle(firstSide, secondSide, thirdSide))
+        if (!IsTriangleValid(firstSide, secondSide, thirdSide))
         {
             throw new ArgumentException("Triangles sides must be non negative and satisfy the triangle inequality.");
         }
@@ -35,14 +33,14 @@ public class Triangle : IFigure
         ThirdSide = thirdSide;
     }
     
-    public bool IsRightTriangle()
+    public bool IsRectangular()
     {
         return
             Math.Abs(_sortedSides[0] * _sortedSides[0] - _sortedSides[1] * _sortedSides[1] - _sortedSides[2] * _sortedSides[2]) 
             < double.Epsilon;
     }
 
-    private bool IsTriangle(double a, double b, double c)
+    private bool IsTriangleValid(double a, double b, double c)
     {
         return (a + b > c) && (a + c > b) && (b + c > a);
     }

@@ -1,12 +1,10 @@
-﻿using AreaCalculator.Interfaces;
+﻿namespace AreaCalculator.Figures;
 
-namespace AreaCalculator.Figures;
-
-public class Circle : IFigure
+public class Circle : Figure
 {
     public double Radius { get; }
 
-    public double Area => Math.PI * Radius * Radius;
+    public override double Area => Math.PI * Radius * Radius;
 
     public Circle(double radius)
     {
