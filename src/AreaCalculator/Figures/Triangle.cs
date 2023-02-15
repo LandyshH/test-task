@@ -15,11 +15,11 @@ public class Triangle : Figure
         }
     }
 
-    private readonly double[] _sortedSides;
+    private readonly IReadOnlyList<double> _sortedSides;
 
     public Triangle(double firstSide, double secondSide, double thirdSide)
     {
-        if (!IsTriangleValid(firstSide, secondSide, thirdSide))
+        if (!IsTriangleExists(firstSide, secondSide, thirdSide))
         {
             throw new ArgumentException("Triangles sides must be non negative and satisfy the triangle inequality.");
         }
@@ -27,7 +27,7 @@ public class Triangle : Figure
         _sortedSides = new[] {firstSide, secondSide, thirdSide}
             .OrderByDescending(s => s)
             .ToArray();
-
+        
         FirstSide = firstSide;
         SecondSide = secondSide;
         ThirdSide = thirdSide;
@@ -37,10 +37,10 @@ public class Triangle : Figure
     {
         return
             Math.Abs(_sortedSides[0] * _sortedSides[0] - _sortedSides[1] * _sortedSides[1] - _sortedSides[2] * _sortedSides[2]) 
-            < double.Epsilon;
+                < double.Epsilon;
     }
 
-    private bool IsTriangleValid(double a, double b, double c)
+    private bool IsTriangleExists(double a, double b, double c)
     {
         return (a + b > c) && (a + c > b) && (b + c > a);
     }

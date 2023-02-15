@@ -38,7 +38,7 @@ public class TriangleTest
     [Theory]
     [InlineData(3, 4, 5, true)]
     [InlineData(3, 3, 5, false)]
-    public void IsRightTriangle_ShouldReturnCorrectResult(double firstSide, 
+    public void IsRectangular_ShouldReturnCorrectResult(double firstSide, 
         double secondSide, double thirdSide, bool expected)
     {
         // Arrange
